@@ -35,7 +35,7 @@ class User:
     for transaction in confirmedTransactions:
       if not transaction.verify(users):
         raise Exception("Fatal error transaction is invalid/modified.")
-    print("Transactions are verified for block{len(blockChain) + 1} transaction.")
+    print(f"Transactions are verified for block {len(blockChain) + 1} transaction.")
     for i in range(len(blockChain)):
       if not blockChain[i].validate(confirmedTransactions, transactionsInOrder[i]):
         raise Exception("Fatal error blockchain is in invalid state.")
